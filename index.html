@@ -16,14 +16,18 @@
 		<div ng-controller="Libros" class="row">
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
-				<table class="table table-bordered">
+				<table class="table table-bordered" ng-controller="Libro">
 					<tr>
+						<th>Identificador</th>
 						<th>Libro</th>
 						<th>Descripción</th>
+						<th>URL</th>
 					</tr>
 					<tr ng-repeat="libro in libros['libros']">
-						<td>{{ libro.titulo }}</td>
+						<td ng->{{ libro.id }}</td>
+						<td><a ng-click="VerLibro(libro.id)">{{ libro.titulo }}</a></td>
 						<td>{{ libro.descripcion }}</td>
+						<td>{{ libro.uri }}</td>
 					</tr>
 				</table>
 			</div>
